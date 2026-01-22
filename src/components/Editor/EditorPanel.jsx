@@ -10,9 +10,9 @@ import AchievementsSection from './AchievementsSection';
 
 function EditorPanel() {
   return (
-    <main className="w-[45%] bg-white dark:bg-background-dark border-r border-[#dbe0e6] dark:border-white/10 flex flex-col">
-      <div className="flex-1 overflow-y-auto custom-scrollbar p-6">
-        <div className="max-w-xl mx-auto space-y-6">
+    <main className="w-full lg:w-[45%] bg-white dark:bg-background-dark lg:border-r border-[#dbe0e6] dark:border-white/10 flex flex-col">
+      <div className="flex-1 overflow-y-auto custom-scrollbar p-4 sm:p-6">
+        <div className="max-w-xl mx-auto space-y-4 sm:space-y-6">
           <PersonalInfoSection />
           <hr className="border-[#dbe0e6] dark:border-white/10" />
           <SummarySection />

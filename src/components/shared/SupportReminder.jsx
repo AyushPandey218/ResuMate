@@ -30,7 +30,7 @@ function SupportReminder() {
   if (!isVisible || isDismissed) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 animate-slide-up max-w-[calc(100vw-2rem)] sm:max-w-sm">
       <div className="bg-white dark:bg-[#1a2332] rounded-2xl shadow-2xl border border-gray-200 dark:border-white/10 p-5 max-w-sm relative">
         {/* Close button */}
         <button

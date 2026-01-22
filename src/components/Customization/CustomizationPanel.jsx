@@ -42,8 +42,8 @@ function CustomizationPanel() {
   ];
 
   return (
-    <aside className="w-72 border-r border-slate-200 bg-white dark:bg-background-dark dark:border-slate-800 overflow-y-auto flex flex-col custom-scrollbar">
-      <div className="p-6">
+    <aside className="hidden lg:flex w-72 border-r border-slate-200 bg-white dark:bg-background-dark dark:border-slate-800 overflow-y-auto flex-col custom-scrollbar">
+      <div className="p-4 sm:p-6">
         <h1 className="text-[#111418] dark:text-white text-base font-bold uppercase tracking-wider">
           Customizer
         </h1>

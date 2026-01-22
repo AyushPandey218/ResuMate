@@ -14,7 +14,7 @@ function LandingPage({ onGetStarted }) {
       />
       {/* Header */}
       <header className="w-full relative z-10">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-center p-12">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-center p-6 sm:p-12">
           <div className="flex items-center gap-2">
             <div className="text-primary">
               <svg fill="none" height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -28,22 +28,22 @@ function LandingPage({ onGetStarted }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-1 flex-col items-center justify-center px-6 relative z-10">
-        <div className="flex flex-col items-center gap-12 text-center max-w-2xl">
+      <main className="flex flex-1 flex-col items-center justify-center px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col items-center gap-8 sm:gap-12 text-center max-w-2xl">
           {/* Hero Heading */}
-          <h1 className="text-6xl font-black tracking-tight leading-[0.9] text-[#111418] dark:text-white md:text-8xl">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] text-[#111418] dark:text-white">
             JOBS MADE EASY
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg font-medium text-[#617589] dark:text-[#94a3b8] max-w-md">
+          <p className="text-base sm:text-lg font-medium text-[#617589] dark:text-[#94a3b8] max-w-md px-4">
             Build a professional, ATS-friendly resume instantly without creating an account.
           </p>
 
           {/* CTA Button */}
           <button
             onClick={onGetStarted}
-            className="flex h-16 min-w-[280px] items-center justify-center rounded-full bg-primary px-10 text-lg font-bold text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
+            className="flex h-14 sm:h-16 min-w-[240px] sm:min-w-[280px] items-center justify-center rounded-full bg-primary px-8 sm:px-10 text-base sm:text-lg font-bold text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
           >
             Create Resume Now
           </button>
@@ -51,10 +51,10 @@ function LandingPage({ onGetStarted }) {
       </main>
 
       {/* Footer */}
-      <footer className="w-full pb-12 pt-6 relative z-10">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-4">
+      <footer className="w-full pb-8 sm:pb-12 pt-4 sm:pt-6 relative z-10">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-3 sm:gap-4 px-4">
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
             <a
               href="https://github.com/AyushPandey218"
               target="_blank"
@@ -115,7 +115,7 @@ function LandingPage({ onGetStarted }) {
             href="https://buymeacoffee.com/ayush_wg218"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 bg-[#FFDD00] hover:bg-[#FFED4E] text-black rounded-lg font-semibold text-sm transition-all hover:scale-105 shadow-md"
+            className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-[#FFDD00] hover:bg-[#FFED4E] text-black rounded-lg font-semibold text-xs sm:text-sm transition-all hover:scale-105 shadow-md"
           >
             <span>☕</span>
             <span>Buy Me a Coffee</span>

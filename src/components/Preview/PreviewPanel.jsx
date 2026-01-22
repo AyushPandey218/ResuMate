@@ -40,9 +40,9 @@ function PreviewPanel({ resumeRef }) {
   };
 
   return (
-    <section className="flex-1 bg-background-light dark:bg-background-dark/50 flex flex-col relative">
+    <section className="w-full lg:flex-1 bg-background-light dark:bg-background-dark/50 flex flex-col relative">
       {/* Zoom Controls */}
-      <div className="absolute bottom-6 right-6 z-10 flex flex-col gap-2">
+      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 flex flex-col gap-2">
         <button
           onClick={handleZoomIn}
           className="w-10 h-10 rounded-full bg-white dark:bg-[#2d3947] shadow-lg border border-[#dbe0e6] dark:border-white/5 flex items-center justify-center text-[#111418] dark:text-white transition-transform active:scale-95 hover:shadow-xl"
@@ -67,7 +67,7 @@ function PreviewPanel({ resumeRef }) {
       </div>
 
       {/* Preview Content */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar p-12 flex justify-center">
+      <div className="flex-1 overflow-y-auto custom-scrollbar p-4 sm:p-8 lg:p-12 flex justify-center">
         <div
           style={{
             transform: `scale(${zoom})`,

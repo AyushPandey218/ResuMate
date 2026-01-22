@@ -19,8 +19,8 @@ function Sidebar({ onBackToHome }) {
   };
 
   return (
-    <aside className="w-72 bg-[#101922] text-white flex flex-col h-full border-r border-[#2d3947]">
-      <div className="p-6 flex flex-col h-full">
+    <aside className="w-72 bg-[#101922] text-white flex flex-col h-full border-r border-[#2d3947] shadow-2xl lg:shadow-none">
+      <div className="p-4 sm:p-6 flex flex-col h-full">
         {/* Logo */}
         <div className="flex items-center gap-3 mb-8">
           <div className="bg-primary p-2 rounded-lg flex items-center justify-center">
