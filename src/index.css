@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* A4 Paper Size (210mm x 297mm at 96 DPI = 794px x 1123px) */
+.a4-paper {
+  width: 794px;
+  min-height: 1123px;
+  max-height: 1123px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Prevent text overlap and ensure proper spacing */
+.a4-paper * {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure proper rendering of flex layouts */
+.a4-paper .flex {
+  min-width: 0;
+}
+
+.a4-paper .flex-1 {
+  min-width: 0;
+  flex: 1 1 0%;
+}
+
+/* Ensure proper text rendering in PDF exports */
+#resume-preview * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* ===================================
+   PRINT MODE STYLES
+   Activated when body.print-mode is present
+   Cleans up preview for professional print output
+   =================================== */
+
+/* Print-mode specific overrides (works in browser and print dialog) */
+body.print-mode {
+  overflow: visible !important;
+  height: auto !important;
+}
+
+body.print-mode * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* Hide UI elements but keep the resume visible */
+body.print-mode aside,
+body.print-mode header:not([class*="print"]),
+body.print-mode nav,
+body.print-mode .sidebar,
+body.print-mode [class*="Sidebar"],
+body.print-mode [class*="EditorPanel"],
+body.print-mode [class*="CustomizationPanel"],
+body.print-mode [class*="ToggleCustomizationButton"] {
+  display: none !important;
+}
+
+/* Hide zoom controls and buttons in preview */
+body.print-mode button[title*="Zoom"],
+body.print-mode .zoom-controls {
+  display: none !important;
+}
+
+/* Clean up the resume container for print */
+body.print-mode .a4-paper {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+/* Remove UI decorations */
+body.print-mode .rounded-xl,
+body.print-mode .rounded-lg,
+body.print-mode .rounded-md,
+body.print-mode .rounded-full {
+  border-radius: 0 !important;
+}
+
+body.print-mode .shadow,
+body.print-mode .shadow-sm,
+body.print-mode .shadow-md,
+body.print-mode .shadow-lg,
+body.print-mode .shadow-xl,
+body.print-mode .shadow-2xl {
+  box-shadow: none !important;
+}
+
+/* Convert skill pills to inline text */
+body.print-mode .flex.flex-wrap.gap-1\.5 > span,
+body.print-mode .flex.flex-wrap.gap-2 > span {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-right: 0.5em !important;
+  border-radius: 0 !important;
+  display: inline !important;
+}
+
+body.print-mode .flex.flex-wrap.gap-1\.5 > span::after,
+body.print-mode .flex.flex-wrap.gap-2 > span::after {
+  content: " • ";
+  color: #666;
+}
+
+body.print-mode .flex.flex-wrap.gap-1\.5 > span:last-child::after,
+body.print-mode .flex.flex-wrap.gap-2 > span:last-child::after {
+  content: "";
+}
+
+/* Simplify project cards */
+body.print-mode .border-l-2,
+body.print-mode .border-l-3 {
+  border-left: 1pt solid #ccc !important;
+  background: transparent !important;
+  padding: 0 0 0 10pt !important;
+  border-radius: 0 !important;
+}
+
+/* Hide interactive elements */
+body.print-mode a[class*="inline-flex items-center"],
+body.print-mode .hover\:underline {
+  text-decoration: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Keep links visible but clean */
+body.print-mode a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Improve text readability */
+body.print-mode {
+  line-height: 1.5 !important;
+}
+
+/* @media print rules for actual print/PDF */
+@media print {
+  /* A4 page setup with minimal margins */
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  /* Hide UI elements, keep resume */
+  aside,
+  nav,
+  button,
+  .sidebar,
+  [class*="Sidebar"],
+  [class*="Header"]:not(.print-header),
+  [class*="EditorPanel"],
+  [class*="CustomizationPanel"],
+  [class*="ToggleCustomizationButton"] {
+    display: none !important;
+  }
+
+  /* Ensure resume container and header are visible */
+  section,
+  .a4-paper,
+  #resume-preview,
+  #resume-preview > header,
+  .print-header {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Clean up container */
+  .a4-paper {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  /* Remove all shadows and decorations */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Disable hover effects */
+  *:hover {
+    background: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Page break controls */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+    orphans: 3;
+  }
+
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Better list rendering */
+  ul, ol {
+    page-break-inside: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links - keep them clickable but don't show URLs */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  /* Don't display URLs after links - keep them embedded */
+  a[href]::after {
+    content: "" !important;
+  }
+}
+
